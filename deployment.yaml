@@ -24,8 +24,6 @@ spec:
           requests:
             memory: "128Mi"
             cpu: "500m"
-          initialDelaySeconds: 5
-          periodSeconds: 5
         securityContext:
           allowPrivilegeEscalation: false
       securityContext:
