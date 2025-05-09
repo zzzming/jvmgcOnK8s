@@ -16,7 +16,10 @@ spec:
     spec:
       containers:
       - name: gc-stress-test
-        image: itestmycode/gc-stress-test:latest
+        image: itestmycode/gc-stress-test:0.0.1
+        env:
+        - name: JAVA_OPTS
+          value: "-Xms256m -Xmx512m -XX:+UseParallelGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -Xlog:gc*:stdout:time,tags -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/app/heapdump.hprof"
         resources:
           limits:
             memory: "128Mi"
